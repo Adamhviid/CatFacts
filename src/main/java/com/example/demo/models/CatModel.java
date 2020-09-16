@@ -14,25 +14,25 @@ public class CatModel implements Comparable<CatModel>{
     @Override
     public int compareTo(CatModel cm) {
 
-        if (cm.createdAt.after(createdAt)) {
-            return -1;
-
-        } if (cm.createdAt.before(createdAt)) {
+        if (this.createdAt.before(cm.createdAt)) {
             return 1;
+
+        } else if (this.createdAt.after(cm.createdAt)) {
+            return -1;
         }
         return 0;
     }
 
     @Override
     public String toString() {
-        return "Your Cat fact: \" " + text + " \" " + "<br>" +
+        return "\"" + text + " \" " + "<br>" +
                 ", Created at [ " + createdAt + " ]" + "<br>" + "<br>";
     }
 
         public String getText() {
         return text;
     }
-
+/*
     public void setText(String text) {
         this.text = text;
     }
@@ -52,6 +52,7 @@ public class CatModel implements Comparable<CatModel>{
     public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
     }
+ */
 }
 
 
